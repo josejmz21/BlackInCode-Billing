@@ -23,4 +23,4 @@ COPY --from=builder /app /app
 
 ENV NODE_ENV=production
 
-CMD ["bun", "run", "src/index.ts"]
+CMD ["bun", "run", "start"]
