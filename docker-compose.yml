@@ -13,5 +13,28 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: blackincode_backend
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://root:password@db:5432/billing
+      - JWT_SECRET=super-secret-jwt-key
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: blackincode_frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
 volumes:
   pgdata:
