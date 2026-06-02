@@ -18,7 +18,8 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+        const defaultApiUrl = import.meta.env.DEV ? 'http://localhost:3000' : '';
+        const apiUrl = import.meta.env.VITE_API_URL || defaultApiUrl;
         const res = await axios.get(`${apiUrl}/api/metrics/dashboard`);
         setMetrics(res.data);
       } catch (error) {
