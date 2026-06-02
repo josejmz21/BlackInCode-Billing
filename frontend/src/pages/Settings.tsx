@@ -9,7 +9,7 @@ export default function Settings() {
   const [companyName, setCompanyName] = useState('BlackInCode Consulting S.C.');
   const [rfc, setRfc] = useState('BIC120405TX4');
   const [address, setAddress] = useState('Paseo de la Reforma 250, CDMX, Mexico');
-  const [cfdiCertificate, setCfdiCertificate] = useState('BIC120405TX4_certificate.cer');
+  const [cfdiCertificate] = useState('BIC120405TX4_certificate.cer');
   const [isSaved, setIsSaved] = useState(false);
 
   const handleSave = (e: React.FormEvent) => {

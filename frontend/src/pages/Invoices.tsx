@@ -4,7 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Plus, Search, Filter, CheckCircle2, AlertCircle, Clock, FileDown } from 'lucide-react';
+import { Plus, Search, CheckCircle2, AlertCircle, Clock, FileDown } from 'lucide-react';
 
 interface Invoice {
   id: string;
