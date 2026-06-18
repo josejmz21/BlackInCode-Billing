@@ -7,7 +7,8 @@ import {
   Settings,
   LogOut,
   Moon,
-  Sun
+  Sun,
+  BarChart3
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -35,6 +36,7 @@ export default function DashboardLayout() {
     { name: 'Invoices', path: '/dashboard/invoices', icon: <FileText className="w-5 h-5" /> },
     { name: 'Clients', path: '/dashboard/clients', icon: <Users className="w-5 h-5" /> },
     { name: 'Products', path: '/dashboard/products', icon: <Package className="w-5 h-5" /> },
+    { name: 'Métricas', path: '/dashboard/metrics', icon: <BarChart3 className="w-5 h-5" /> },
     { name: 'Settings', path: '/dashboard/settings', icon: <Settings className="w-5 h-5" /> },
   ];
 
