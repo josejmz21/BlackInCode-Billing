@@ -10,9 +10,16 @@ const MetricsSchema = z.object({
   totalInvoices: z.number(),
   totalBilled: z.number(),
   totalClients: z.number(),
+  vucemUsage: z.number(),
+  totalJobs: z.number(),
+  usageCount: z.number(),
   monthlyData: z.array(z.object({
     name: z.string(),
     total: z.number(),
+  })),
+  clientUsageData: z.array(z.object({
+    client: z.string(),
+    usage: z.number(),
   })),
 });
 
@@ -62,6 +69,9 @@ metricsRoutes.openapi(getDashboardMetricsRoute, async (c) => {
     totalInvoices: 156,
     totalBilled: 125000.50,
     totalClients: 45,
+    vucemUsage: 890,
+    totalJobs: 124,
+    usageCount: 5670,
     monthlyData: [
       { name: 'Jan', total: 4000 },
       { name: 'Feb', total: 3000 },
@@ -69,6 +79,13 @@ metricsRoutes.openapi(getDashboardMetricsRoute, async (c) => {
       { name: 'Apr', total: 2780 },
       { name: 'May', total: 1890 },
       { name: 'Jun', total: 2390 },
+    ],
+    clientUsageData: [
+      { client: 'Acme Corp', usage: 1200 },
+      { client: 'Globex Inc', usage: 950 },
+      { client: 'Soylent Corp', usage: 800 },
+      { client: 'Initech', usage: 600 },
+      { client: 'Umbrella Corp', usage: 450 },
     ],
   });
 });
